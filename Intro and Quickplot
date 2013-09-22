@@ -1,0 +1,13 @@
+############################################################################
+# Installing ggplot2
+
+install.packages("ggplot2")
+library(ggplot2)
+
+############################################################################
+# qplot examples 
+ 
+qplot(diamonds$cut, diamonds$carat)
+qplot(carat, price, data = diamonds)
+qplot(carat, price, data = diamonds, colour=clarity)
+qplot(carat, price, data = diamonds, geom=c("point", "smooth"), method=lm)
