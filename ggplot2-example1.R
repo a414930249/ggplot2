@@ -1,5 +1,5 @@
 library(ggplot2)
-
+library(plyr)
 
 df <- structure(list(City = structure(c(2L,
      3L, 1L), .Label = c("Minneapolis", "Phoenix",
