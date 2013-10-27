@@ -32,3 +32,16 @@ qplot(wt, mpg, data=mtcars, geom=c("point", "smooth"),
 qplot(gear, mpg, data=mtcars, geom=c("boxplot", "jitter"), 
    fill=gear, main="Mileage by Gear Number",
    xlab="", ylab="Miles per Gallon")
+
+
+p <- qplot(hp, mpg, data=mtcars, shape=am, color=am, 
+   facets=gear~cyl, main="Scatterplots of MPG vs. Horsepower",
+   xlab="Horsepower", ylab="Miles per Gallon")
+
+# White background and black grid lines
+p + theme_bw()
+
+# Large brown bold italics labels
+# and legend placed at top of plot
+p + theme(axis.title=element_text(face="bold.italic", 
+   size="12", color="brown"), legend.position="top")
