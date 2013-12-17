@@ -10,8 +10,10 @@ mtcars$cyl <- factor(mtcars$cyl,levels=c(4,6,8), labels=c("4cyl","6cyl","8cyl"))
 
 # Kernel density plots for mpg
 # grouped by number of gears (indicated by color)
-
-qplot(mpg, data=mtcars, geom="density", fill=gear, alpha=I(.5), main="Distribution of Gas Milage", xlab="Miles Per Gallon", 
+##################################################################
+qplot(mpg, data=mtcars, geom="density", fill=gear, alpha=I(.5), 
+   main="Distribution of Gas Milage", 
+   xlab="Miles Per Gallon", 
    ylab="Density")
 
 # Scatterplot of mpg vs. hp for each combination of gears and cylinders
@@ -26,7 +28,7 @@ qplot(wt, mpg, data=mtcars, geom=c("point", "smooth"),
    main="Regression of MPG on Weight", 
    xlab="Weight", ylab="Miles per Gallon")
 
-
+#####################################################################
 # Boxplots of mpg by number of gears 
 # observations (points) are overlayed and jittered
 qplot(gear, mpg, data=mtcars, geom=c("boxplot", "jitter"), 
