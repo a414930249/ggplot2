@@ -14,3 +14,11 @@ temp = ggplot(data=datos,aes(x=fecha, y=TempMax,colour="1")) +
            scale_colour_manual(values=c("red","green","blue"))
 
 temp
+#########################################################
+##Subset the necessary columns
+dd_sub = datos[,c(20, 2,3,5)]
+##Then rearrange your data frame
+dd = melt(dd_sub, id=c("fecha"))
+
+ggplot(dd) + geom_line(aes(x=fecha, y=value, colour=variable)) +
+  scale_colour_manual(values=c("red","green","blue"))
